@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=run_me_to_setup_home_nat
+Comment=run_me_to_setup_home_nat
+Exec=/home/jxj/git/home_nat_script/run_me_to_setup_home_nat.sh
+Icon=/home/jxj/git/home_nat_script/nat.jpeg
+Terminal=true
+Type=Application
