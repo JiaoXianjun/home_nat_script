@@ -2,14 +2,14 @@
 % this script must be run as root!
 
 wait_connect_countdown = 0; % should be connect in 1 min
-system('echo y | sudo iptables-apply');
-sleep(1);
-system('echo y | sudo iptables-apply');
+%system('echo y | sudo iptables-apply');
+%sleep(1);
+%system('echo y | sudo iptables-apply');
 
 while 1
 	sleep(1);
 	
-	ip = get_ip('wlan2');
+	ip = get_ip('wlan1');
 	if ip == -1
 		if  wait_connect_countdown == 0
 			% disable network
@@ -41,13 +41,15 @@ while 1
 	
 	wait_connect_countdown = 0;
 	
-	ip_in_rules = read_iptables_rules('/etc/network/iptables.up.rules');
-	if ~strcmpi(ip_in_rules, ip)
-		write_iptables_rules('/etc/network/iptables.up.rules', ip);
-		sleep(1);
-		system('echo y | sudo iptables-apply');
-		disp(['Change IP from ' ip_in_rules ' to ' ip]);
-	else
-		disp([ip_in_rules ' = ' ip '. Will not update iptables.']);
-	end
+	disp(['wlan1 ip ' ip]);
+
+	%ip_in_rules = read_iptables_rules('/etc/network/iptables.up.rules');
+	%if ~strcmpi(ip_in_rules, ip)
+	%	write_iptables_rules('/etc/network/iptables.up.rules', ip);
+	%	sleep(1);
+	%	system('echo y | sudo iptables-apply');
+	%	disp(['Change IP from ' ip_in_rules ' to ' ip]);
+	%else
+	%	disp([ip_in_rules ' = ' ip '. Will not update iptables.']);
+	%end
 end
