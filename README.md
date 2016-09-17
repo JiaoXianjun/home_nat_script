@@ -4,6 +4,11 @@ home nat script
 
 For Linux
 NOTE!
+
+Change and put iptables.up.rules into /etc/network/iptables.up.rules!!!
+
+Run "sudo iptables-apply"
+
 Fan control operations are disabled by default for safety reasons.
 
 To enable fan control, the module parameter fan_control=1 must be given to thinkpad-acpi.
