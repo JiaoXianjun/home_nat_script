@@ -1,7 +1,10 @@
 # home_nat_script
 home nat script
 
+watch RSSI:
 
+    watch -n 1 cat /proc/net/wireless
+        
 For Linux
 NOTE!
 
