@@ -9,6 +9,15 @@ Change and put iptables.up.rules into /etc/network/iptables.up.rules!!!
 
 Run "sudo iptables-apply"
 
+Or add following to /etc/rc.local:
+
+    echo '1' > /proc/sys/net/ipv4/ip_forward
+    iptables -F
+    iptables -A FORWARD -j ACCEPT
+    #iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o wlan1 -j SNAT --to-source 192.168.182.8
+    iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o wlan0 -j MASQUERADE
+    exit 0
+
 Fan control operations are disabled by default for safety reasons.
 
 To enable fan control, the module parameter fan_control=1 must be given to thinkpad-acpi.
