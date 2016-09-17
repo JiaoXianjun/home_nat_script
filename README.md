@@ -5,6 +5,8 @@ home nat script
 For Linux
 NOTE!
 
+Remember to change wlan0/1 in network_auto_script.m
+
 Change and put iptables.up.rules into /etc/network/iptables.up.rules!!!
 
 Run "sudo iptables-apply"
