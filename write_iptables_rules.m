@@ -10,7 +10,7 @@ function write_iptables_rules(filename, ip)
 	fprintf(fid, ':INPUT ACCEPT [77:5275]\n');
 	fprintf(fid, ':OUTPUT ACCEPT [552:35286]\n');
 	fprintf(fid, ':POSTROUTING ACCEPT [552:35286]\n');
-	fprintf(fid, '-A POSTROUTING -s 192.168.0.0/24 -o wlan2 -j SNAT --to-source %s\n', ip);
+	fprintf(fid, '-A POSTROUTING -s 192.168.0.0/24 -o wlan0 -j SNAT --to-source %s\n', ip);
 	
 	fprintf(fid, 'COMMIT\n');
 	fprintf(fid, '*filter\n');

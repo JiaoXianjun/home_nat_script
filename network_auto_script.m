@@ -25,8 +25,8 @@ while 1
 			system('nmcli nm wifi on');
 			disp('nmcli nm wifi on');
 			%sleep(3);
-			%system('nmcli d wifi connect PROXIMUS_FON iface wlan2');
-			%disp('nmcli d wifi connect PROXIMUS_FON iface wlan2');
+			%system('nmcli d wifi connect PROXIMUS_FON iface wlan0');
+			%disp('nmcli d wifi connect PROXIMUS_FON iface wlan0');
 			
 			% set wait count down
 			wait_connect_countdown = 45; 
