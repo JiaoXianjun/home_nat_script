@@ -9,7 +9,7 @@ wait_connect_countdown = 0; % should be connect in 1 min
 while 1
 	sleep(1);
 	
-	ip = get_ip('wlan1');
+	ip = get_ip('wlan0');
 	if ip == -1
 		if  wait_connect_countdown == 0
 			% disable network
@@ -41,7 +41,7 @@ while 1
 	
 	wait_connect_countdown = 0;
 	
-	disp(['wlan1 ip ' ip]);
+	disp(['wlan0 ip ' ip]);
 
 	%ip_in_rules = read_iptables_rules('/etc/network/iptables.up.rules');
 	%if ~strcmpi(ip_in_rules, ip)
