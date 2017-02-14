@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=octave_softGL
+Comment=octave_softGL
+Exec=~/octave_softGL.sh
+Icon=~/octave-logo.ico
+Terminal=true
+Type=Application
+
